@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F6F3EC;
+    color: #1F2822;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+  }
+}
+
+/* Ambient gradient mesh animations */
+@keyframes ambient-glow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.45;
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.08);
+    opacity: 0.65;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+    opacity: 0.4;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 25px rgba(46, 125, 79, 0.25);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(46, 125, 79, 0.45);
+  }
+}
+
+@keyframes shine-sweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.animate-ambient-slow {
+  animation: ambient-glow 14s ease-in-out infinite alternate;
+}
+
+.animate-ambient-fast {
+  animation: ambient-glow 8s ease-in-out infinite alternate-reverse;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  animation: shine-sweep 4.5s ease-in-out infinite;
+}
+
+/* Noise overlay for organic, high-end editorial feel */
+.bg-mesh-warm {
+  background-color: #F5EFE6;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(220, 240, 226, 0.8) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(254, 243, 199, 0.7) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(209, 235, 219, 0.6) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(254, 215, 170, 0.5) 0px, transparent 50%);
+}
+
+.bg-emerald-luxury {
+  background: linear-gradient(135deg, #132D20 0%, #1A3E2C 40%, #0F2419 100%);
+}

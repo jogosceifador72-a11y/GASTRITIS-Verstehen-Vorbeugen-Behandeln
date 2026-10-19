@@ -1,0 +1,6 @@
+{
+  "name": "Gastritis – Verstehen, Vorbeugen, Behandeln",
+  "description": "Der verständliche 30-Seiten Ratgeber als E-Book. Ursachen, Warnzeichen, magenfreundliche Ernährung und ärztliche Schritte sicher einordnen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
